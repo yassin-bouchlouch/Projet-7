@@ -1,88 +1,50 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>JavaScript Calculator</h1>
-<p class="warning">Don't divide by zero</p>
-
-<div id="calculator" class="calculator">
-
-  <button id="clear" class="clear">C</button>
-
-  <div id="viewer" class="viewer">0</div>
-
-  <button class="num" data-num="7">7</button>
-  <button class="num" data-num="8">8</button>
-  <button class="num" data-num="9">9</button>
-  <button data-ops="plus" class="ops">+</button>
-
-  <button class="num" data-num="4">4</button>
-  <button class="num" data-num="5">5</button>
-  <button class="num" data-num="6">6</button>
-  <button data-ops="minus" class="ops">-</button>
-
-  <button class="num" data-num="1">1</button>
-  <button class="num" data-num="2">2</button>
-  <button class="num" data-num="3">3</button>
-  <button data-ops="times" class="ops">*</button>
-
-  <button class="num" data-num="0">0</button>
-  <button class="num" data-num=".">.</button>
-  <button id="equals" class="equals" data-result="">=</button>
-  <button data-ops="divided by" class="ops">/</button>
-</div>
-
-<button id="reset" class="reset">Reset Universe?</button>
-
-  <script src="app.js"></script>
-</body>
-</html> -->
-
-
-
-  
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculator</title>
-    <!-- CSS part -->
-    
+    <link rel="stylesheet" href="style.css">
+    <title>Calculatrice v1</title>
 </head>
 <body>
-    <div class="main">
-        <form action="" name="Calculator">
-           <input type="text" class="text maincolor" name="text1" disabled>
-           <input type="text" class="text1 maincolor" name="text12" value="C" onclick="location.reload()"><br>
-           <input type="button" class="num maincolor" name="btn9" value="9" onclick="displaynum(btn9.value)">
-           <input type="button" class="num maincolor" name="btn8" value="8" onclick="displaynum(btn8.value)">
-           <input type="button" class="num maincolor" name="btn7" value="7" onclick="displaynum(btn7.value)">
-           <input type="button" class="num blue" name="addbtn" value="+" onclick="displaynum(addbtn.value)"><br>
-           <input type="button" class="num maincolor" name="btn6" value="6" onclick="displaynum(btn6.value)">
-           <input type="button" class="num maincolor" name="btn5" value="5" onclick="displaynum(btn5.value)">
-           <input type="button" class="num maincolor" name="btn4" value="4" onclick="displaynum(btn4.value)">
-           <input type="button" class="num per" name="subbtn" value="-" onclick="displaynum(subbtn.value)"><br>
-           <input type="button" class="num maincolor" name="btn3" value="3" onclick="displaynum(btn3.value)">
-           <input type="button" class="num maincolor" name="btn2" value="2" onclick="displaynum(btn2.value)">
-           <input type="button" class="num maincolor" name="btn1" value="1" onclick="displaynum(btn1.value)">
-           <input type="button" class="num red" name="mulbtn" value="*" onclick="displaynum(mulbtn.value)"><br>
-           <input type="button" class="num maincolor" name="dot" value="." onclick="displaynum(dot.value)">
-           <input type="button" class="num maincolor" name="btn0" value="0" onclick="displaynum(btn0.value)">
-           <input type="button" class="num gre" name="eqlbtn" value="=" onclick="text1.value=eval(text1.value)">
-           <input type="button" class="num org" name="divbtn" value="/" onclick="displaynum(divbtn.value)"><br>
-        </form>
-    </div>
-    <script>
-        function displaynum(n1){
-            Calculator.text1.value=Calculator.text1.value+n1;
-        }
-    </script>
+    
+    <table border="1">
+        <thead>
+            
+        <tbody>
+            <tr><td colspan="4" class="titre">Calcularice</td></tr>
+            </thead>
+            <tr>
+                <td><input type="button" value="C"  id="clr" onclick="clr()"></td>
+                <td colspan="3"><input type="text" id="txt" readonly ></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" id="val" onclick="affiche('+')"></td>
+                <td><input type="button" value="1" id="val" onclick="affiche('1')"></td>
+                <td><input type="button" value="2" id="val" onclick="affiche('2')"></td>
+                <td><input type="button" value="3" id="val" onclick="affiche('3')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="-" id="val" onclick="affiche('-')"></td>
+                <td><input type="button" value="4" id="val" onclick="affiche('4')"></td>
+                <td><input type="button" value="5" id="val" onclick="affiche('5')"></td>
+                <td><input type="button" value="6" id="val" onclick="affiche('6')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="*" id="val" onclick="affiche('*')"></td>
+                <td><input type="button" value="7" id="val" onclick="affiche('7')"></td>
+                <td><input type="button" value="8" id="val" onclick="affiche('8')"></td>
+                <td><input type="button" value="9" id="val" onclick="affiche('9')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" id="val" onclick="affiche('/')"></td>
+                <td><input type="button" value="." id="val" onclick="affiche('.')"></td>
+                <td><input type="button" value="0" id="val" onclick="affiche('0')"></td>
+                <td><input type="button" value="=" id="eq" onclick="calc()"></td>
+            </tr>
+        </tbody>
+    </table>
+  
+    <script src="app.js"></script>    
 </body>
 </html>
