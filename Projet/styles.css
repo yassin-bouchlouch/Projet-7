@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: Gotham Rounded, sans-serif;
-  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
 }
 
 body {
@@ -18,16 +20,19 @@ body {
   justify-content: center;
   align-content: center;
   min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 80px);
 }
 
 .calculator-grid > button {
   cursor: pointer;
   font-size: 2rem;
-  border: 1px solid white;
+  /* border: 1px solid rgba(255, 255, 255, .2); */
+  border: none;
   outline: none;
-  background-color: rgba(255, 255, 255, .75);
+  background: rgba(42,50,113, .28);
+  color: #00b7ff;
+  
 }
 
 .calculator-grid > button:hover {
@@ -36,11 +41,12 @@ body {
 
 .span-two {
   grid-column: span 2;
+  background-color: #c97874;
 }
 
 .output {
   grid-column: 1 / -1;
-  background-color: rgba(0, 0, 0, .75);
+  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -48,14 +54,17 @@ body {
   padding: 10px;
   word-wrap: break-word;
   word-break: break-all;
+  color: #c97874;
+  
 }
 
 .output .previous-operand {
-  color: rgba(255, 255, 255, .75);
+  color: #c97874;
   font-size: 1.5rem;
 }
 
 .output .current-operand {
-  color: white;
+  color: #ffffff;
   font-size: 2.5rem;
 }
+
