@@ -14,6 +14,12 @@ function Calculer(x,y,operation){
         case '-':
             _solution = x-y;
                 break;
+        case 'x':
+            _solution = x*y;
+                break;
+        case '/':
+            _solution = x/y;
+                break;
         default:
             break;
     }
